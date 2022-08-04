@@ -2,6 +2,7 @@ package com.th30ne.progression_overhaul;
 
 import com.mojang.logging.LogUtils;
 import com.th30ne.progression_overhaul.block.ModBlocks;
+import com.th30ne.progression_overhaul.item.ModItems;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.MinecraftForge;
@@ -28,9 +29,9 @@ public class progression_overhaul {
 
 
     public progression_overhaul() {
-        // Register the setup method for modloading
         IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
+        ModItems.register(eventBus);
         ModBlocks.register(eventBus);
 
         eventBus.addListener(this::setup);
